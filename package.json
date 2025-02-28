@@ -1,7 +1,11 @@
 {
   "name": "@ianfyan/stringsutils",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "A utility library for string manipulation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ianfyan/stringsutils.git"
+  },
   "type": "module",
   "keywords": [
     "string",
