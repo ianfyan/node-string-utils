@@ -4,9 +4,11 @@ A lightweight and powerful **string utility library** for JavaScript and Node.js
 
 ## 🚀 Features
 - ✅ Convert between different **case formats** (camelCase, snake_case, PascalCase, etc.)
-- 🔄 **String manipulations** (reverse, capitalize, repeat, etc.)
-- 🧺 **Sanitize** text (remove special characters, normalize spaces)
-- 💊 **Analyze** text (word count, readability score, sentiment analysis)
+- 🔄 **String manipulations** (reverse, capitalize,  trim, truncate, etc.)
+- 🧺 **Sanitize** text (remove special characters, normalize spaces, trim punctuation, convert quotes)
+- 📊 **Analyze** text (word count, readability score, sentiment analysis)
+- 📂 **Encode and decode** text (Base64, URL encoding, ROT13)
+- 🛡️ **Validate** strings (email, URL, phone number, JSON, etc.)
 - ✂️ **Tokenize** text into words, sentences, or characters
 - 🎲 **Utility functions** (ordinal numbers, random word selection, text wrapping)
 
@@ -46,30 +48,78 @@ console.log(wordCount("Hello world!")); // 2
 | `toUpperSnakeCase(str)` | Converts to UPPER_SNAKE_CASE | `"hello world"` → `"HELLO_WORLD"` |
 
 ### 🔄 **String Manipulation**
-| Function          | Description                              | Example |
-|------------------|------------------------------------------|---------|
-| `reverseString(str)` | Reverses a string | `"hello"` → `"olleh"` |
+| Function               | Description                              | Example |
+|------------------------|------------------------------------------|---------|
+| `reverseString(str)`   | Reverses a string | `"hello"` → `"olleh"` |
 | `capitalizeWords(str)` | Capitalizes each word | `"hello world"` → `"Hello World"` |
-| `trimString(str)` | Trims whitespace | `" hello "` → `"hello"` |
-| `repeatString(str, n)` | Repeats a string `n` times | `"hi", 3` → `"hihihi"` |
-| `isPalindrome(str)` | Checks if a string is a palindrome | `"madam"` → `true` |
+| `trimString(str)`      | Trims whitespace | `" hello "` → `"hello"` |
+| `truncateString(str, maxLength)` | Truncates a string and adds "..." if too long | `("hello world", 5)` → `"hello..."` |
+| `slugify(str)`         | Converts to URL-friendly slug | `"Hello World!"` → `"hello-world"` |
+| `generateRandomString(length)` | Generates a random string | `10` → `"aZ3xY9wLpQ"` |
+| `countCharacter(str, char)` | Counts occurrences of a character | `("hello", "l")` → `2` |
+| `isAlpha(str)`         | Checks if string contains only letters | `"hello"` → `true` |
+| `uncapitalize(str)`    | Converts first letter to lowercase | `"Hello"` → `"hello"` |
+| `removeVowels(str)`    | Removes vowels from string | `"hello"` → `"hll"` |
+| `wordFrequency(str)`   | Counts occurrences of each word | `"hi hi hello"` → `{ hi: 2, hello: 1 }` |
+| `reverseWords(str)`    | Reverses words in a sentence | `"hello world"` → `"world hello"` |
+| `toTitleCase(str)`     | Converts to Title Case | `"hello world"` → `"Hello World"` |
+| `extractNumbers(str)`  | Extracts numbers from string | `"abc123xyz"` → `[123]` |
+| `isEmptyOrWhitespace(str)` | Checks if string is empty/whitespace | `"  "` → `true` |
+| `swapCase(str)`        | Swaps case of each letter | `"Hello"` → `"hELLO"` |
+| `insertAt(str, subStr, index)` | Inserts substring at index | `("hello", "X", 2)` → `"heXllo"` |
+| `removeSubstring(str, subStr)` | Removes all occurrences of substring | `("hello world", "world")` → `"hello "` |
+| `shuffleString(str)`   | Randomly shuffles characters | `"hello"` → `"loleh"` |
+| `stringToBinary(str)`  | Converts string to binary | `"hi"` → `"01101000 01101001"` |
+| `binaryToString(binary)` | Converts binary to string | `"01101000 01101001"` → `"hi"` |
+| `toAlternatingCase(str)` | Converts to alternating case | `"hello"` → `"hElLo"` |
+| `removeDuplicateCharacters(str)` | Removes duplicate characters | `"hello"` → `"helo"` |
+| `longestWord(str)` | Finds longest word in a string | `"hi hello"` → `"hello"` |
+| `toHashtag(str)` | Converts string to hashtag format | `"hello world"` → `"#HelloWorld"` |
+| `uniqueWords(str)` | Extracts unique words | `"hi hello hi"` → `"hi hello"` |
+| `charFrequency(str)` | Counts occurrences of each character | `"hello"` → `{ h:1, e:1, l:2, o:1 }` |
 
 ### 🧺 **Text Sanitization**
 | Function                | Description                            | Example |
 |-------------------------|----------------------------------------|---------|
-| `removeNonAlphaNumeric(str)` | Removes special characters | `"he!!o@w#rld"` → `"heloworld"` |
-| `normalizeWhitespace(str)` | Converts multiple spaces into one | `"hello    world"` → `"hello world"` |
-| `escapeHTML(str)` | Escapes HTML characters | `"<div>"` → `"&lt;div&gt;"` |
-| `unescapeHTML(str)` | Unescapes HTML characters | `"&lt;div&gt;"` → `"<div>"` |
+| `removeNonAlphaNumeric(str)`   | Removes non-alphanumeric characters              | `"Hello@World!"` → `"HelloWorld"`   |
+| `normalizeWhitespace(str)`     | Converts multiple spaces into a single space     | `"Hello   World"` → `"Hello World"` |
+| `trimPunctuation(str)`         | Removes leading/trailing punctuation             | `"!Hello!"` → `"Hello"`             |
+| `toAscii(str)`                 | Converts non-ASCII characters to ASCII equivalent | `"Café"` → `"Cafe"`                 |
+| `maskString(str, start, end)`  | Masks part of a string with asterisks            | `("password", 2, -2)` → `"pa****rd"` |
+| `isNumeric(str)`               | Checks if a string contains only digits          | `"12345"` → `true`                  |
+| `removeDuplicateWords(str)`    | Removes duplicate words from a string            | `"hi hi hello"` → `"hi hello"`      |
+| `normalizeDiacritics(str)`     | Normalizes diacritics (é → e, ñ → n)             | `"Café"` → `"Cafe"`                 |
+| `removeExtraPunctuation(str)`  | Removes extra punctuation marks                  | `"Hello!!"` → `"Hello!"`            |
+| `convertQuotes(str)`           | Converts curly quotes to straight quotes         | `“Hello”` → `"Hello"`               |
 
 ### 📊 **Text Analysis**
 | Function               | Description                      | Example |
 |------------------------|----------------------------------|---------|
-| `wordCount(str)` | Counts words in a string | `"Hello world"` → `2` |
-| `mostCommonWord(str)` | Finds the most common word | `"hi hi hello"` → `"hi"` |
-| `charFrequency(str)` | Counts character occurrences | `"hello"` → `{h:1, e:1, l:2, o:1}` |
-| `readabilityScore(str)` | Estimates readability score | `"Hello world."` → `206.8` |
-| `sentimentAnalysis(str)` | Determines sentiment | `"I love this"` → `"positive"` |
+| `readabilityScore(str)`  | Computes readability score based on word/sentence length | `"Hello world. This is a test."` → `80.3`  |
+| `mostCommonWord(str)`    | Finds the most common word in a string           | `"hi hi hello"` → `"hi"`                      |
+| `sentimentAnalysis(str)` | Analyzes sentiment as positive, negative, or neutral | `"I love this!"` → `"positive"`          |
+
+### 📂 **Encoding**
+| Function              | Description                                      | Example                                        |
+| --------------------- | ------------------------------------------------ | ---------------------------------------------- |
+| `base64Encode(str)`  | Encodes a string in Base64                      | `base64Encode("Hello")` → `"SGVsbG8="`  |
+| `base64Decode(str)`  | Decodes a Base64-encoded string                 | `base64Decode("SGVsbG8=")` → `"Hello"`  |
+| `urlEncode(str)`     | Encodes a string for safe use in URLs           | `urlEncode("Hello World!")` → `"Hello%20World%21"`  |
+| `urlDecode(str)`     | Decodes a URL-encoded string                    | `urlDecode("Hello%20World%21")` → `"Hello World!"`  |
+| `rot13(str)`         | Applies ROT13 cipher to shift letters           | `rot13("Hello")` → `"Uryyb"`  |
+
+### 🛡️ **Validation**
+| Function              | Description                                      | Example                                        |
+| --------------------- | ------------------------------------------------ | ---------------------------------------------- |
+| `isValidEmail(str)`  | Checks if a string is a valid email             | `isValidEmail("test@example.com")` → `true`  |
+| `isValidURL(str)`    | Checks if a string is a valid URL               | `isValidURL("https://example.com")` → `true`  |
+| `isValidPhoneNumber(str)` | Checks if a string is a valid phone number  | `isValidPhoneNumber("+1234567890")` → `true`  |
+| `isAlpha(str)`       | Checks if a string contains only alphabetic characters | `isAlpha("Hello")` → `true` |
+| `isAlphanumeric(str)` | Checks if a string contains only alphanumeric characters | `isAlphanumeric("Hello123")` → `true` |
+| `isLowercase(str)`   | Checks if a string contains only lowercase letters | `isLowercase("hello")` → `true` |
+| `isUppercase(str)`   | Checks if a string contains only uppercase letters | `isUppercase("HELLO")` → `true` |
+| `isValidHexColor(str)` | Checks if a string is a valid hexadecimal color code | `isValidHexColor("#ff5733")` → `true` |
+| `isValidJSON(str)`   | Checks if a string is a valid JSON              | `isValidJSON('{"key": "value"}')` → `true`  |
 
 ### ✂️ **Tokenization**
 | Function               | Description                       | Example |
@@ -81,10 +131,10 @@ console.log(wordCount("Hello world!")); // 2
 ### 🎲 **Utilities**
 | Function               | Description                        | Example |
 |------------------------|------------------------------------|---------|
-| `toHashtag(str)` | Converts string to hashtag format | `"hello world"` → `"#HelloWorld"` |
-| `longestWord(str)` | Finds longest word in a string | `"hi hello"` → `"hello"` |
-| `toOrdinal(n)` | Converts number to ordinal format | `1` → `"1st"`, `2` → `"2nd"` |
-| `wrapText(str, n)` | Wraps text at `n` characters | `"hello world", 5` → `"hello\nworld"` |
+| `wrapText(str, maxLength)` | Wraps text into lines of a given max length | `wrapText("This is a long text", 10)` → `"This is a\nlong text"` |
+| `randomWord(words)`   | Selects a random word from an array              | `randomWord(["apple", "banana", "cherry"])` → `"banana"` |
+| `toOrdinal(number)`   | Converts a number to its ordinal representation  | `toOrdinal(21)` → `"21st"`                     |
+| `isTitleCase(str)`    | Checks if a string is in Title Case              | `isTitleCase("Hello World")` → `true`         |
 
 ## 🛠 Development
 Clone the repository:
