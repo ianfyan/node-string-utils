@@ -1,0 +1,15 @@
+{
+  "name": "stringsutils",
+  "version": "1.0.0",
+  "description": "A utility library for string manipulation",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0",
+    "prepublishOnly": "npm run build",
+    "build": "mkdir -p dist && cp -r src dist"
+  },
+  "keywords": ["string", "utils", "nodejs"],
+  "author": "ianfyan",
+  "license": "MIT"
+}
