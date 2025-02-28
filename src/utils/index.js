@@ -5,3 +5,4 @@ export * from "./textAnalysis.js";
 export * from "./textSanitizers.js";
 export * from "./textUtilities.js";
 export * from "./tokenization.js";
+export * from "./validation.js";
