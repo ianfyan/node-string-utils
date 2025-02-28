@@ -2,14 +2,22 @@
   "name": "stringsutils",
   "version": "1.0.0",
   "description": "A utility library for string manipulation",
-  "main": "src/index.js",
   "type": "module",
+  "keywords": [
+    "string",
+    "utils",
+    "nodejs"
+  ],
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0",
+    "test": "mocha --require ./test/setup.js",
     "prepublishOnly": "npm run build",
     "build": "mkdir -p dist && cp -r src dist"
   },
-  "keywords": ["string", "utils", "nodejs"],
+  "devDependencies": {
+    "chai": "^5.2.0",
+    "mocha": "^11.1.0"
+  },
   "author": "ianfyan",
   "license": "MIT"
 }
