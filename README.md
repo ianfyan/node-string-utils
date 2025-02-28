@@ -1,6 +1,6 @@
 # StringsUtils 📝
 
-A lightweight and powerful **string utility library** for JavaScript and Node.js, providing **formatting, manipulation, sanitization, analysis, and tokenization** functions.
+A lightweight and powerful **string utility library** for JavaScript and Node.js, providing **formatting, manipulation, sanitization, analysis, encoding, validation, and tokenization** functions.
 
 ## 🚀 Features
 - ✅ Convert between different **case formats** (camelCase, snake_case, PascalCase, etc.)
@@ -99,7 +99,7 @@ console.log(wordCount("Hello world!")); // 2
 | `mostCommonWord(str)`    | Finds the most common word in a string           | `"hi hi hello"` → `"hi"`                      |
 | `sentimentAnalysis(str)` | Analyzes sentiment as positive, negative, or neutral | `"I love this!"` → `"positive"`          |
 
-### 📂 **Encoding**
+### 📂 **Encoding and Decoding**
 | Function              | Description                                      | Example                                        |
 | --------------------- | ------------------------------------------------ | ---------------------------------------------- |
 | `base64Encode(str)`  | Encodes a string in Base64                      | `base64Encode("Hello")` → `"SGVsbG8="`  |
@@ -142,6 +142,12 @@ Clone the repository:
 git clone https://github.com/yourusername/stringsutils.git
 cd stringsutils
 npm install
+```
+
+### 💚 Run Tests
+To test all functions:
+```sh
+npm test
 ```
 
 ## 📄 License
