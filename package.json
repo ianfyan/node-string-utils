@@ -1,10 +1,10 @@
 {
-  "name": "@ianfyan/stringsutils",
-  "version": "0.0.2",
+  "name": "@ianfyan/node-string-utils",
+  "version": "0.0.1",
   "description": "A utility library for string manipulation",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ianfyan/stringsutils.git"
+    "url": "https://github.com/ianfyan/node-string-utils.git"
   },
   "type": "module",
   "keywords": [

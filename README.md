@@ -1,4 +1,4 @@
-# StringsUtils 📝
+# node-string-utils 📝
 
 A lightweight and powerful **string utility library** for JavaScript and Node.js, providing **formatting, manipulation, sanitization, analysis, encoding, validation, and tokenization** functions.
 
@@ -15,13 +15,13 @@ A lightweight and powerful **string utility library** for JavaScript and Node.js
 ## 📦 Installation
 Install via **npm**:
 ```sh
-npm install ianfyan/stringsutils
+npm install @ianfyan/node-string-utils
 ```
 
 ## 🔧 Usage
 Import the package in your project:
 ```javascript
-import { toCamelCase, toSnakeCase, reverseString, wordCount } from "stringsutils";
+import { toCamelCase, toSnakeCase, reverseString, wordCount } from "ianfyan/node-string-utils";
 
 // Convert to camelCase
 console.log(toCamelCase("hello world")); // "helloWorld"
@@ -139,8 +139,8 @@ console.log(wordCount("Hello world!")); // 2
 ## 🛠 Development
 Clone the repository:
 ```sh
-git clone https://github.com/yourusername/stringsutils.git
-cd stringsutils
+git clone https://github.com/ianfyan/node-string-utils.git
+cd node-string-utils
 npm install
 ```
 
@@ -154,6 +154,6 @@ npm test
 MIT License - Free to use and modify.
 
 ---
-With **StringsUtils**, handling strings in **JavaScript & Node.js** is easier than ever! 🚀  
+With **node-string-utils**, handling strings in **JavaScript & Node.js** is easier than ever! 🚀  
 Got feature requests? Feel free to contribute! 🎉
 
