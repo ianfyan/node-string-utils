@@ -1,5 +1,5 @@
 {
-  "name": "stringsutils",
+  "name": "@ianfyan/stringsutils",
   "version": "1.0.0",
   "description": "A utility library for string manipulation",
   "type": "module",
@@ -8,11 +8,17 @@
     "utils",
     "nodejs"
   ],
-  "main": "src/index.js",
+  "files": [
+    "dist"
+  ],
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "exports": {
+    "import": "./dist/index.js"
+  },
   "scripts": {
     "test": "mocha --require ./test/setup.js",
-    "prepublishOnly": "npm run build",
-    "build": "mkdir -p dist && cp -r src dist"
+    "build": "rmdir /s /q dist && mkdir dist && xcopy /E /I src dist"
   },
   "devDependencies": {
     "chai": "^5.2.0",
