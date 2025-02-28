@@ -10,7 +10,9 @@
   "keywords": [
     "string",
     "utils",
-    "nodejs"
+    "nodejs",
+    "packages",
+    "library"
   ],
   "files": [
     "dist"

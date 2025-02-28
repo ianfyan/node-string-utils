@@ -2,6 +2,7 @@
 
 A lightweight and powerful **string utility library** for JavaScript and Node.js, providing **formatting, manipulation, sanitization, analysis, encoding, validation, and tokenization** functions.
 
+
 ## 🚀 Features
 - ✅ Convert between different **case formats** (camelCase, snake_case, PascalCase, etc.)
 - 🔄 **String manipulations** (reverse, capitalize,  trim, truncate, etc.)
@@ -12,16 +13,18 @@ A lightweight and powerful **string utility library** for JavaScript and Node.js
 - ✂️ **Tokenize** text into words, sentences, or characters
 - 🎲 **Utility functions** (ordinal numbers, random word selection, text wrapping)
 
+
 ## 📦 Installation
 Install via **npm**:
 ```sh
 npm install @ianfyan/node-string-utils
 ```
 
+
 ## 🔧 Usage
 Import the package in your project:
 ```javascript
-import { toCamelCase, toSnakeCase, reverseString, wordCount } from "ianfyan/node-string-utils";
+import { toCamelCase, toSnakeCase, reverseString, wordCount } from "@ianfyan/node-string-utils";
 
 // Convert to camelCase
 console.log(toCamelCase("hello world")); // "helloWorld"
@@ -35,6 +38,7 @@ console.log(reverseString("hello")); // "olleh"
 // Count words
 console.log(wordCount("Hello world!")); // 2
 ```
+
 
 ## 📚 API Reference
 
@@ -136,6 +140,7 @@ console.log(wordCount("Hello world!")); // 2
 | `toOrdinal(number)`   | Converts a number to its ordinal representation  | `toOrdinal(21)` → `"21st"`                     |
 | `isTitleCase(str)`    | Checks if a string is in Title Case              | `isTitleCase("Hello World")` → `true`         |
 
+
 ## 🛠 Development
 Clone the repository:
 ```sh
@@ -149,6 +154,7 @@ To test all functions:
 ```sh
 npm test
 ```
+
 
 ## 📄 License
 MIT License - Free to use and modify.
