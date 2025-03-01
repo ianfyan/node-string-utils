@@ -2,36 +2,45 @@ import { build } from "esbuild";
 import fs from "fs";
 import path from "path";
 
-// Hapus folder dist jika ada
+// Function to delete the "dist" folder if it exists
 function deleteFolder(folderPath) {
   if (fs.existsSync(folderPath)) {
     fs.rmSync(folderPath, { recursive: true, force: true });
   }
 }
 
-// Fungsi untuk menyalin file dengan ekstensi .mjs
+// Function to copy files from "src" to "dist" and rename .js files to .mjs
 function copyFiles(srcDir, destDir) {
   fs.readdirSync(srcDir).forEach(file => {
     const srcPath = path.join(srcDir, file);
-    const destPath = path.join(destDir, file);
+    const destPath = path.join(destDir, file.replace(/\.js$/, ".mjs"));
 
     if (fs.statSync(srcPath).isDirectory()) {
+      // Create the destination folder if it doesn't exist
       if (!fs.existsSync(destPath)) fs.mkdirSync(destPath);
       copyFiles(srcPath, destPath);
     } else if (file.endsWith(".js")) {
-      fs.copyFileSync(srcPath, destPath.replace(/\.js$/, ".mjs"));
+      // Read the file content and replace .js imports with .mjs
+      let content = fs.readFileSync(srcPath, "utf8");
+      content = replaceImportExtension(content);
+      fs.writeFileSync(destPath, content, "utf8");
     }
   });
 }
 
-// Hapus dan buat ulang folder dist
+// Function to replace import statements from .js to .mjs
+function replaceImportExtension(code) {
+  return code.replace(/(from\s+["']\.\/.*?)(\.js)(["'])/g, "$1.mjs$3");
+}
+
+// Delete and recreate the "dist" folder
 deleteFolder("dist");
 fs.mkdirSync("dist", { recursive: true });
 
-// Salin semua file dari src ke dist untuk ESM
+// Copy all ESM files to "dist" and update imports
 copyFiles("src", "dist");
 
-// Build versi CJS
+// Build the CommonJS version using esbuild
 build({
   entryPoints: ["src/index.js"],
   outdir: "dist",

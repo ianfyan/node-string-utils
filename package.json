@@ -1,6 +1,6 @@
 {
   "name": "node-string-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A utility library for string manipulation",
   "repository": {
     "type": "git",
