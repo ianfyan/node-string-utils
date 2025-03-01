@@ -1,6 +1,6 @@
 {
-  "name": "@ianfyan/node-string-utils",
-  "version": "0.0.2",
+  "name": "node-string-utils",
+  "version": "0.0.1",
   "description": "A utility library for string manipulation",
   "repository": {
     "type": "git",

@@ -17,14 +17,14 @@ A lightweight and powerful **string utility library** for JavaScript and Node.js
 ## 📦 Installation
 Install via **npm**:
 ```sh
-npm install @ianfyan/node-string-utils
+npm install node-string-utils
 ```
 
 
 ## 🔧 Usage
 Import the package in your project:
 ```javascript
-import { toCamelCase, toSnakeCase, reverseString, wordCount } from "@ianfyan/node-string-utils";
+import { toCamelCase, toSnakeCase, reverseString, wordCount } from "node-string-utils";
 
 // Convert to camelCase
 console.log(toCamelCase("hello world")); // "helloWorld"
