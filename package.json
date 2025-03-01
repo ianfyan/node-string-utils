@@ -1,6 +1,6 @@
 {
   "name": "@ianfyan/node-string-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A utility library for string manipulation",
   "repository": {
     "type": "git",
@@ -17,17 +17,19 @@
   "files": [
     "dist"
   ],
-  "module": "dist/index.js",
-  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "main": "dist/index.cjs",
   "exports": {
-    "import": "./dist/index.js"
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
   },
   "scripts": {
     "test": "mocha --require ./test/setup.js",
-    "build": "rmdir /s /q dist && mkdir dist && xcopy /E /I src dist"
+    "build": "node build/build.js"
   },
   "devDependencies": {
     "chai": "^5.2.0",
+    "esbuild": "^0.25.0",
     "mocha": "^11.1.0"
   },
   "author": "ianfyan",
