@@ -1,5 +1,9 @@
 # node-string-utils 📝
 
+![npm](https://img.shields.io/npm/v/node-string-utils?color=blue) 
+![npm downloads](https://img.shields.io/npm/dt/node-string-utils) 
+![license](https://img.shields.io/github/license/ianfyan/node-string-utils)
+
 A lightweight and powerful **string utility library** for JavaScript and Node.js, providing **formatting, manipulation, sanitization, analysis, encoding, validation, and tokenization** functions.
 
 
